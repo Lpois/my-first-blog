@@ -1,22 +1,13 @@
 <html>
-    <head>
-        <title>Fracasso</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Fracasso</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Escrevi e sai correndo...</a></h1>
+</div>
 
-        <div>
-            <p>published: 30.11.2017, 01:19</p>
-            <h2><a href="">Como ser um fracassado</a></h2>
-            <p>Primeiro voce precisa ser um merda ou seje, apenas precisa existir.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Japa X Diego quem e mais merda?</a></h2>
-            <p>Muitos estudam sobre isso mas minha opiniao e que o nivel de merda dos dois e igual.</p>
-        </div>
-    </body>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </html>
